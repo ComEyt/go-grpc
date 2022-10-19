@@ -1,0 +1,24 @@
+syntax = "proto3";
+
+// go_package 是必须设置的值，而且go_package的值必须是包导入的路径。
+// package关键字指定生成的.pb.go文件所在的包名。我们通过service关键字定义服务，
+// 然后再制定该服务拥有的RPC方法，并定义方法的请求和返回的结构体类型。
+option go_package = "../helloworld";
+
+// 执行protoc 命令  protoc -I . helloworld.proto --go_out=plugins=grpc:.
+package helloworld;
+
+service Greeter{
+  // sends a greeting
+  rpc SayHello(HelloRequest) returns (HelloReply){}
+}
+
+// The request message containing the user's name
+message HelloRequest{
+  string name = 1;
+}
+
+// The response message containing the greetings
+message HelloReply{
+  string message = 1;
+}
