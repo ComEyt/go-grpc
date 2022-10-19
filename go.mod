@@ -2,7 +2,6 @@ module go-grpc
 
 go 1.17
 
-replace github.com/marmotedu/iam => ../yangtong/iam
 
 require (
 	google.golang.org/grpc v1.50.1
