@@ -3,7 +3,7 @@
 // 	protoc-gen-go v1.28.1
 // 	protoc        v3.21.7
 // source: helloworld.proto
-
+// +build linux darwin windows
 // 执行protoc 命令  protoc -I . helloworld.proto --go_out=plugins=grpc:.
 
 package helloworld
